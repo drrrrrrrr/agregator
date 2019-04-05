@@ -1,0 +1,10 @@
+<div class="container">
+  <h3 class="text-center">Сохранения</h3>
+  <hr>
+  <div class="col-12">
+    <p class="lead">Ваши сохранения</p>
+  </div>
+</div>
+<div class="footer-article" *ngFor="let article of saveArticles">
+  <app-user-save-article [article]="article" (deleteEmitter)="onDelete($event)"></app-user-save-article>
+</div>

@@ -1,0 +1,26 @@
+<div class="container container-form">
+  <form class="form-signin" [formGroup]= "form"  (ngSubmit)="onSubmit()">
+    <h1 class="h3 mb-3 font-weight-normal">Ввойдите</h1>
+    <label for="inputEmail" class="sr-only">Почта</label>
+    <input type="email"
+           id="inputEmail"
+           class="form-control"
+           placeholder="Почта"
+           formControlName="email">
+    <div *ngIf="form.get('email').touched && form.get('email').invalid" class="alert alert-primary" role="alert">
+        {{checkInput(form.get('email'))}}
+    </div>
+
+    <label for="inputPassword" class="sr-only">Пароль</label>
+    <input type="password"
+           id="inputPassword"
+           class="form-control"
+           placeholder="Пароль"
+           formControlName="password">
+    <div *ngIf="form.get('password').touched && form.get('password').invalid" class="alert alert-primary" role="alert">
+      {{checkInput(form.get('password'))}}
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="form.invalid">Ввойти</button>
+  </form>
+</div>

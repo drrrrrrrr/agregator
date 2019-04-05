@@ -1,0 +1,15 @@
+<app-top-content [categories] = "categories" [sources]="sources" (activeCategory)="uploadActiveCategory($event);setActiveCategories($event)" (activeSources)="uploadActiveCategory(activeCategory,$event)"></app-top-content>
+
+
+<app-main-content [saveArticles]="saveArticles"></app-main-content>
+
+<div  *ngIf="activeCategory" class="container">
+  <h3 class="text-center">Контент</h3>
+  <hr>
+  <div class="col-12">
+    <p class="lead">Выбрана категория: {{changeNameCategories(activeCategory)}}</p>
+  </div>
+</div>
+<div class="footer-article" *ngFor="let state of articles">
+  <app-footer-content  [canSave] = 'userEmail' [article]="state" (saveArticle) = "onSaveArticle($event)" (deleteArticle)="onDeleteArticle($event)"></app-footer-content>
+</div>

@@ -1,0 +1,51 @@
+<div class="container">
+  <h3 class="text-center">Подписки</h3>
+  <hr>
+  <div class="col-12">
+    <p class="lead text-center">Ваши подписки</p>
+  </div>
+</div>
+<flash-messages></flash-messages>
+<p>Виды Спорта</p>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="panel panel-default">
+        <!-- List group -->
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let category of bindKeys">
+            {{changeNameCategories(category)}}
+            <div class="material-switch pull-right">
+              <input id="{{category}}" name="{{category}}" type="checkbox"  [checked]="categories.get(category)" (change)="changeCheckBox(category)">
+              <label for="{{category}}" class="label-default"></label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<p>Источники</p>
+<div class="container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="panel panel-default">
+          <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let source of bindKeysSource">
+              {{source}}
+              <div class="material-switch pull-right">
+                <input id="{{source}}" name="{{source}}" type="checkbox"  [checked]="sources.get(source)" (change)="changeCheckBoxSource(source)">
+                <label for="{{source}}" class="label-default"></label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" (click)="saveChanges($event)">Сохранить</button>
+<br>
+<br>

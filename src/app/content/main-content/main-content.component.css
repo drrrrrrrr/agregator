@@ -1,0 +1,14 @@
+.card-size {
+  height: 660px;
+  margin-bottom: 100px;
+  position: relative;
+  overflow: scroll;
+}
+.card-img-size {
+  height: 500px;
+}
+.card-bottom {
+  position: absolute;
+  top: 24px;
+  left: 0;
+}
