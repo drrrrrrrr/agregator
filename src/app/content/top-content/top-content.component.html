@@ -1,10 +1,15 @@
+
 <div class="container">
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
-      <a *ngFor="let x of categories" class="p-2 text-muted" [class.red]="checkColor(x)" (click)="changeActiveCategory(x)">{{changeNameCategories(x)}}</a>
+      <a *ngFor="let x of categories" class="p-2 text-muted" [class.black]="checkColor(x)" (click)="changeActiveCategory(x)">{{changeNameCategories(x)}}</a>
     </nav>
     <nav class="nav d-flex justify-content-between">
-      <a *ngFor="let x of sources" class="p-2 text-muted" [class.red]="checkColorSource(x)" (click)="changeActiveSource(x)">{{x}}</a>
+      <a *ngFor="let x of sources" class="p-2 text-muted" [class.black]="checkColorSource(x)" (click)="changeActiveSource(x)">{{x}}</a>
     </nav>
+    <nav class="nav d-flex justify-content-between">
+      <a *ngFor="let x of getSubCategories(currentActiveCategory)" class="p-2 text-muted" [class.black]="checkColorSubTitle(x)" (click)="changeActiveSubTitle(x)">{{convert(x)}}</a>
+    </nav>
+
   </div>
 </div>

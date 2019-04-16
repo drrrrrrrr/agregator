@@ -1,0 +1,47 @@
+<div  *ngIf="article?.description" class="card">
+  <p  (click)="returnToMain()" class="card-text text-center">Назад</p>
+  <h5 class="card-header"></h5>
+  <img *ngIf="article.url_img?.trim().length" class="card-img-top" src="{{article?.url_img}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{article.title}}</h5>
+    <p class="card-text">{{article.description}}</p>
+    <p class="card-text text-center"> {{article.publish_at}}</p>
+    <p  (click)="showComment()" class="card-text text-center"> Комментировать</p>
+
+  </div>
+</div>
+
+<div *ngIf="commentTrue" class="all">
+<h4>Комментарии</h4>
+<div class="comments">
+  <div class="comment-wrap">
+    <div class="photo">
+      <div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/121.jpg')"></div>
+    </div>
+    <div class="comment-block" *ngIf="isAuthorize">
+      <form action="">
+        <textarea name="" id="" cols="30" rows="3" placeholder="Добавить комментарий" #comment></textarea>
+        <a class="btn btn-primary" (click)="addComment(comment.value)">Отправить</a>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="comment-wrap" *ngFor="let x of commentArray">
+    <div class="photo">
+      <div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/felipenogs/128.jpg')"></div>
+    </div>
+    <div class="comment-block">
+      <p class="comment-text">От кого: {{x.email}}</p>
+      <p class="comment-text">{{x.description}}</p>
+      <div class="bottom-comment">
+        <div class="comment-date">{{x.date}}</div>
+        <ul class="comment-actions" *ngIf="userEmail == x.email">
+          <li class="complain" (click)="deleteComment(x.description)">Удалить</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+

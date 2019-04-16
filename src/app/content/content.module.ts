@@ -8,13 +8,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {ContentRoutingModule} from './content-routing.module';
 import {AuthGuard} from '../guard/auth.guard';
 import {ConvertTimePipe} from '../pipes/convert-time.pipe';
+import {NextContentComponent} from './next-content/next-content.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    ContentRoutingModule
+    ContentRoutingModule,
   ],
-  declarations: [ContentComponent, TopContentComponent, MainContentComponent, FooterContentComponent, ConvertTimePipe],
+  declarations: [ContentComponent, TopContentComponent, MainContentComponent, FooterContentComponent, ConvertTimePipe, NextContentComponent],
   providers: [HttpClientModule, AuthGuard],
   exports: [ContentComponent]
 })

@@ -1,10 +1,4 @@
-<!--<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">-->
-  <!--<div class="col-md-6 px-0">-->
-    <!--<h1 class="display-4 font-italic">{{currentArticle.title}}</h1>-->
-    <!--<p class="lead my-3">{{currentArticle.description}}</p>-->
-    <!--<p class="lead mb-0"><a href="{{currentArticle.url}}" class="text-white font-weight-bold">Перейти</a></p>-->
-  <!--</div>-->
-<!--</div>-->
+
 <div *ngIf="saveArticles && saveArticles.length > 0 && currentArticle" class="container">
   <h3 class="text-center">Новости</h3>
   <hr>
@@ -15,19 +9,26 @@
 <div  *ngIf="saveArticles && saveArticles.length > 0 && currentArticle" class="card card-size">
   <h5 class="card-header"></h5>
 
-  <img *ngIf="currentArticle.url_img" class="card-img-top card-img-size" src="{{currentArticle.url_img}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{currentArticle?.title}}</h5>
-    <p class="card-text">{{currentArticle?.description}}</p>
-    <div class="container">
-      <div class="row card-bottom">
-        <div class="col-2">
-          <a href="{{currentArticle?.url_to_source}}" class="btn btn-primary">Перейти</a>
-        </div>
-        <div class="col-8"></div>
-
-
+<img *ngIf="currentArticle.url_img" class="card-img-top card-img-size" src="{{currentArticle.url_img}}" alt="Card image cap">
+<div class="card-body">
+  <h5 class="card-title">{{currentArticle?.title}}</h5>
+  <p class="card-text">{{currentArticle?.description}}</p>
+  <div class="container">
+    <div class="row card-bottom">
+      <div class="col-2">
+        <a href="{{currentArticle?.url_to_source}}" class="btn btn-primary">Перейти</a>
       </div>
+      <div class="col-8"></div>
+
+
     </div>
   </div>
 </div>
+</div>
+<!--<div class="carousel-item">-->
+  <!--<img src="..." alt="...">-->
+  <!--<div class="carousel-caption d-none d-md-block">-->
+    <!--<h5>...</h5>-->
+    <!--<p>...</p>-->
+  <!--</div>-->
+<!--</div>-->

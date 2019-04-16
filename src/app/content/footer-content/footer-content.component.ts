@@ -18,6 +18,8 @@ export class FooterContentComponent implements OnInit {
 
   ngOnInit() {
     this.saving = this.article.author === 'yes';
+    if (this.article.description.length > 800)
+     this.article.description =   this.article.description.substring(0, 800) + "...";
   }
   save() {
     this.saving = true;

@@ -6,12 +6,14 @@ import {UserComponent} from './user.component';
 import {AuthGuard} from '../guard/auth.guard';
 import {ExitPanelGuard} from './exitPanel.guard';
 import {UserGraphComponent} from './user-graph/user-graph.component';
+import {NextContentComponent} from '../content/next-content/next-content.component';
 
 const routes: Routes = [
   {path: 'subscribe', component: UserPanelComponent , canActivate: [AuthGuard], canDeactivate: [ExitPanelGuard]},
   {path: 'save', component: UserSaveComponent , canActivate: [AuthGuard]},
   {path: 'graph', component: UserGraphComponent , canActivate: [AuthGuard]},
-  {path: 'user', component: UserComponent , canActivate: [AuthGuard]}
+  {path: 'user', component: UserComponent , canActivate: [AuthGuard]},
+  {path: 'save/article/:id', component: NextContentComponent , canActivate: [AuthGuard]}
 ];
 
 @NgModule({

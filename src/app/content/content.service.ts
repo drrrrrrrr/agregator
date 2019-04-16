@@ -38,4 +38,17 @@ export class ContentService {
         return x;
       }));
   }
+  getSubtitleInfo(subtitle) {
+    return this.http.get(`http://localhost:9966/api/v1/news/getcategory/${subtitle}`)
+      .pipe(map(x => {
+        console.log(x)
+        return x;
+      }));
+  }
+  getArticleFromId(id) {
+    return this.http.get(`http://localhost:9966/api/v1/news/getarticle/${id}`)
+      .pipe(map(x => {
+        return x;
+      }));
+  }
 }

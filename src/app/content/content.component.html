@@ -1,7 +1,11 @@
-<app-top-content [categories] = "categories" [sources]="sources" (activeCategory)="uploadActiveCategory($event);setActiveCategories($event)" (activeSources)="uploadActiveCategory(activeCategory,$event)"></app-top-content>
+<app-top-content [categories] = "categories"
+                 [sources]="sources" (activeCategory)="uploadActiveCategory($event);
+                 setActiveCategories($event)"
+                 (activeSources)="uploadActiveCategory(activeCategory,$event)"
+                  (activeSubTitle)="activeSubTitle($event)"></app-top-content>
 
 
-<app-main-content [saveArticles]="saveArticles"></app-main-content>
+<!--<app-main-content [saveArticles]="saveArticles"></app-main-content>-->
 
 <div  *ngIf="activeCategory" class="container">
   <h3 class="text-center">Контент</h3>

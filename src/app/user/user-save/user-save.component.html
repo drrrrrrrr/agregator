@@ -5,6 +5,12 @@
     <p class="lead">Ваши сохранения</p>
   </div>
 </div>
-<div class="footer-article" *ngFor="let article of saveArticles">
-  <app-user-save-article [article]="article" (deleteEmitter)="onDelete($event)"></app-user-save-article>
+
+<div *ngIf="saveArticles?.length" class="text-center" >
+  <div class="footer-article" *ngFor="let article of saveArticles">
+    <app-user-save-article [article]="article" (deleteEmitter)="onDelete($event)"></app-user-save-article>
+  </div>
+</div>
+<div *ngIf="!saveArticles?.length" class="text-center">
+  <p>Нет сохраненных новостей</p>
 </div>

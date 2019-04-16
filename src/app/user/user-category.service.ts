@@ -10,7 +10,7 @@ export class UserCategoryService {
 
   moc_ru_categories = [ 'business', 'entertainment', 'health', 'science' , 'sports', 'technology'];
   moc_ru_categories2 = [ 'football', 'basketball', 'volleyball', 'hockey' , 'tennis', 'mma', 'biatlon', 'boks'];
-  moc_ru_sources = ['fnk', 'sportbox', 'sports.ru'];
+  moc_ru_sources = ['fnk', 'sportbox', 'sports.ru', 'bloodandsweat', 'championat', 'vsenabox'];
   items: Observable<UserCategory[]>;
   constructor(private afs: AngularFirestore, private auth: AuthService) {}
   getCategories(): Observable<string[]> {

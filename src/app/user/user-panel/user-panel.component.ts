@@ -21,7 +21,10 @@ export class UserPanelComponent implements OnInit, ComponentCanDeactivate {
   sources = new Map([
     ['fnk' , false],
     ['sportbox', false],
-    ['sports.ru', false]
+    ['sports.ru', false],
+    ['bloodandsweat', false],
+    ['championat', false],
+    ['vsenabox',false]
   ]);
   changeCategories: string[] = [];
   changeSources: string[] = [];

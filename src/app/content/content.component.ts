@@ -37,6 +37,7 @@ export class ContentComponent implements OnInit {
           if (this.categories.length > 0) {
             const nameCategory = this.categories[0];
             this.activeCategory = nameCategory;
+            // @ts-ignore
             zip(this.contentService.getCategory(nameCategory), this.userArticleService.getSaveArticles()).subscribe(dataC => {
               // @ts-ignore
               const first: IArticle[] = dataC[0];
@@ -55,6 +56,7 @@ export class ContentComponent implements OnInit {
         this.activeCategory = 'football';
         this.userEmail = false;
         this.saveArticles = false;
+        // @ts-ignore
         this.contentService.getCategory(this.activeCategory).subscribe(data => {
           // @ts-ignore
           this.articles = data;
@@ -91,6 +93,7 @@ export class ContentComponent implements OnInit {
           this.articles = first;
         });
       } else {
+        // @ts-ignore
         this.contentService.getCategory(category).subscribe(data => {
           // @ts-ignore
           this.articles = data;
@@ -130,6 +133,13 @@ export class ContentComponent implements OnInit {
     // @ts-ignore
     const cat = new Map(categoriesMap);
     return cat.get(name);
+  }
+
+  activeSubTitle(name) {
+    this.contentService.getSubtitleInfo(name).subscribe(data => {
+      // @ts-ignore
+      this.articles = data;
+    });
   }
 
 
